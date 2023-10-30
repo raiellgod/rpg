@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet"> 
+    <title>Você tem dado em casa?</title>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Vamos brincar e desenvolver uma função em javascript para dados e depois implementar no jogo</h1>
+    </header>
+   <div class="centralizado">
+    <div id="seleores">
+        <select name="Número de dados jogados" id="repeticao" required="required">
+            <option value="">repetições</option>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+    
+        <select name="Qual dado devemos rodar" id="valor" required="required">
+            <option value="">valor do dado</option>
+            <option value="2">d2</option>
+            <option value="4">d4</option>
+            <option value="6">d6</option>
+            <option value="8">d8</option>
+            <option value="10">d10</option>
+            <option value="12">d12</option>
+            <option value="16">d16</option>
+            <option value="20" selected>d20</option>
+            <option value="24">d24</option>
+            <option value="30">d30</option>
+            <option value="60">d60</option>
+            <option value="100">d100</option>
+        </select>
+    
+        <select name="Qual o fundo utilizar" id="background" required="required">
+            <option value="" selected>background</option>
+            <option value="preto">Fundo preto</option>
+            <option value="olho_zica">Olho de gato verde</option>
+            <option value="olho_azul">Olho de gato azul</option>
+            <option value="cassio">Cássio sexy</option>
+            <option value="calvo">Roger Guedes</option>
+        </select>    
+
+        <button id="btn_dado" onclick="rolar(), carregaAtributos(), background(), addimagem(), addvalor()">Teste de rolagem</button>
+
+    </div>
+   <div id="resultado_dados">
+    <div id="resultado">
+        <input type="text" id="dado"></input>
+        <span id="teste_imagem"></span>
+    </div>
+   </div>
+
+   </div>
+
+   <div id="brincando_com_o_selct">
+    <div id="radius">
+        <INPUT TYPE="RADIO" NAME="escolha" VALUE="1" id="4d6"> 4d6 pegando os tres maiores
+        <INPUT TYPE="RADIO" NAME="escolha" VALUE="2" id="d20s"> d20
+        <INPUT TYPE="RADIO" NAME="escolha" VALUE="3" id="livro"> opção dada pelo livro 
+        
+        <button id="btn_status" onclick="">Teste de select</button>
+    
+    </div>
+    
+    <div id="seletor">
+        <div id="tabela_seletor">
+            <select id="teste_seletor">
+                <option value="0">status</option>
+            </select>
+        </div>
+    </div>
+   </div> 
+
+
+</body>
+<script src="index.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+    </style> 
+</html>

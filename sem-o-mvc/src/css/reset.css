@@ -4,3 +4,11 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
+body {
+    background-image: url('../imagens/papel_velho_menos_velho.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh; 
+}

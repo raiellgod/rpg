@@ -1,0 +1,54 @@
+:root {
+    --branco: #fff;
+    
+    --preto:#000;
+    
+    --pretinho:#121212;
+    
+    --vermelho:#FE1B22;
+    
+    --verde-musgo:#162938;
+
+    --transparente:transparent;
+
+
+
+    /* --font-padrao: Arial, verdana, helvetica, sans-serif;
+    
+    --font-logo: 'old-london-db-normal', sans-serif;
+    
+    --font-ficha: 'pirata-one-regular', sans-serif; */
+
+
+
+    --tituloh1: 5em;
+
+    --tituloh2: 2em;
+
+    --tamammho-normal:1em;
+
+    --tamanho-maiorzinho:1.2em;
+
+    --tamanho-menorzinho:0.9em;
+
+
+
+
+    --thin:100;
+    
+    --extrathin:200;
+    
+    --light:300;
+    
+    --regular:400;
+    
+    --medium:500;
+    
+    --semibold:600;
+    
+    --bold:700;
+    
+    --extrabold:800;
+    
+    --black:900;
+}

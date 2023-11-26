@@ -1,0 +1,74 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  min-height: 100%;
+}
+
+
+body {
+    background-image: url('../imagens/papel_velho_menos_velho.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cabecalho{
+  display: flex;
+  justify-content:space-between;
+}
+
+.cabecalho img {
+  width: 70px;
+  height: 70px;
+}
+
+.cabecalho button {
+  margin-right: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100px;
+  height: 40px;
+  color: #fff;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo-botao{
+  display: block;
+}
+
+.centro, .sobtn{
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.centro img {
+  width: 800px;
+}
+
+.btnlogin {
+  width: 500px;
+  color: #fff;
+}

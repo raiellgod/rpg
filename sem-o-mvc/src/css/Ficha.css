@@ -1,0 +1,98 @@
+main{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;    
+  }
+  
+  header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* z-index: 99; */
+  }
+  
+  header img {
+    width: 70px;
+    height: 70px;
+  }
+
+.borda {
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 30px;
+}
+
+.borda {
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 30px;
+}
+
+#cabacalho{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#nome_personagem{
+    height: 120px;
+    margin-top: 5%;
+    margin-left: 1.5%;
+}
+
+#nome_personagem .nome_personagem {
+    width: 100%;
+    height:50px;    
+}
+
+#infos{
+    margin-right: 1.5%;
+}
+
+#linha1{
+    margin-bottom: 15px;
+}
+
+input {
+    border-radius: 10px;
+    background: #DEE5FF;
+    color: #000;
+    padding: 10px;
+    margin-bottom: 2px;
+}
+
+textarea {
+    border-radius: 10px;
+    background: #DEE5FF;
+    color: #000;
+    padding: 10px;
+}
+
+span {
+    font-weight: bold;
+}
+
+#linha1 input, #linha1 textarea, #linha2 input, #linha2 textarea {
+    width: 100%;
+    height:50px;
+}
+
+#corpo #numeros {
+    width: 96.5%;
+    margin: 22px;
+    padding: 30px;
+}
+
+#statusLinha1, #statusLinha2{
+    display: flex;
+    justify-content: space-around;
+}
+

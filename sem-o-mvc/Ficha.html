@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre das fichas - ficha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="src/imagens/redondo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/Ficha.css">
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/root.css">
+</head>
+<body>
+    <header>
+        <img src="src/imagens/redondo.png" alt="Logo">
+        <button type="button" class="btn btn btn-dark" id="btnFicha1" onclick="AbrirTela('divFicha1', 'btnFicha1')" disabled>STATUS</button>
+        <button type="button" class="btn btn btn-dark" id="btnFicha2" onclick="AbrirTela('divFicha2', 'btnFicha2')">ATAQUES E EQUIPAMENTOS</button>
+        <button type="button" class="btn btn btn-dark" id="btnFicha3" onclick="AbrirTela('divFicha3', 'btnFicha3')">CARACTERISTICAS</button>
+        <button type="button" class="btn btn btn-dark" id="btnFicha4" onclick="AbrirTela('divFicha4', 'btnFicha4')">IDIOMAS E APARÊNCIA</button>
+        <button type="button" class="btn btn btn-dark" id="btnFicha5" onclick="AbrirTela('divFicha5', 'btnFicha5')">HISTÓRIA</button>
+    </header>
+
+    <main>
+       <div id="divFicha1">
+        <div class="row" id="cabacalho">
+            <div id="nome_personagem" class="col-lg-4 borda">
+                <textarea type="text" placeholder="Nome do Personagem" title="Nome do personagem" class="nome_personagem" maxlength="100" id="personagem1"></textarea>
+                <span> Nome do Personagem</span>
+            </div>
+            <div id="infos" class="col-lg-7 borda">
+                <div id="linha1" class="row">
+                    <div class="col-lg-3">
+                        <textarea type="text" placeholder="Classe" title="classe" class="classe" id="classes"></textarea>
+                        <span>Classe</span>
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="number" min="0" placeholder="Nivel" title="Seu nivel" class="nivel" id="nivel"/>
+                        <span>Nivel</span>
+                    </div>
+                    <div class="col-lg-3">
+                        <textarea type="text" placeholder="Antecedente" title="Antecedente" class="antecedente" id="antecedente"></textarea>
+                        <span>Antecedente</span>
+                    </div>
+                    <div class="col-lg-3">
+                        <textarea type="text" placeholder="Nome do Jogador" title="Nome do Jogador" class="jogador" id="nome_jogador"></textarea>
+                        <span>Nome do Jogador</span>
+                    </div>
+                </div>
+                <div id="linha2" class="row">
+                    <div class="col-lg-3">
+                        <textarea type="text" placeholder="Raça" title="Raça" class="raca" id="raca"></textarea>
+                        <span>Raça</span>
+                    </div>
+                    <div class="col-lg-3">
+                        <textarea type="text" placeholder="Tendência" title="Tendência" class="tendencia" id="tendencia"></textarea>
+                        <span>Tendência</span>
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="number" placeholder="Pontos de Experiência" title="Pontos de Experiência" class="exp" min="0" id="exp"/>
+                        <span>Pontos de Experiência</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="corpo" class="row">
+            <div id="numeros" class="col-lg-11 borda">
+                <div id="status">
+                    <div id="statusLinha1" class="row">
+                        <div id="forca" class="col-lg-3 borda">
+                            <span>Força</span>
+                            <input type="number" title="Modificador de força" class="mod_forca" id="mod_forca" disabled />
+                            <input type="number" id="StatusForca" class="forca" oninput="calcularMods()" />
+                        </div>
+                        <div id="destreza" class="col-lg-3 borda">
+                            <span>Destreza</span>
+                            <input type="number" title="Modificador de destreza" class="mod_destreza" id="mod_destreza" disabled />
+                            <input type="number" id="StatusDestreza" class="destreza" oninput="calcularMods()" />
+                        </div>
+                        <div id="constituicao" class="col-lg-3 borda">
+                            <span>Constituição</span>
+                            <input type="number" title="Modificador de constituição" class="mod_constituicao" id="mod_constituicao" disabled />
+                            <input type="number" id="StatusConstituicao" class="constituicao" oninput="calcularMods()" />
+                        </div>
+                    </div>
+                    <div id="statusLinha2" class="row">
+                        <div id="inteligencia" class="col-lg-3 borda">
+                            <span>Inteligência</span>
+                            <input type="number" title="Modificador de inteligência" class="mod_inteligencia" id="mod_inteligencia" disabled />
+                            <input type="number" id="StatusInteligencia" class="inteligencia" oninput="calcularMods()" />
+                        </div>
+                        <div id="sabedoria" class="col-lg-3 borda">
+                            <span>Sabedoria</span>
+                            <input type="number" title="Modificador de sabedoria" class="mod_sabedoria" id="mod_sabedoria" disabled />
+                            <input type="number" id="StatusSabedoria" class="sabedoria" oninput="calcularMods()" />
+                        </div>
+                        <div id="carisma" class="col-lg-3 borda">
+                            <span>Carisma</span>
+                            <input type="number" title="Modificador de carisma" class="mod_carisma" id="mod_carisma" disabled />
+                            <input type="number" id="StatusCarisma" class="carisma" oninput="calcularMods()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="testes" class="col-lg-3">
+                <div id="inspiracao" class="borda">
+                    <input type="number" class="inspiracao" />
+                    <span>Inspiração</span>
+                </div>
+                <div id="proficiencia" class="borda">
+                    <input type="number" class="proficiencia" id="bonus_proficiencia" disabled />
+                    <span>Bônus de Proeficiência</span>
+                </div>
+                <div id="teste" class="borda">
+                    <div id="teste_forca">
+                        <input class="check" type="checkbox" value="" id="TesteForcaCheckbox" />
+                        <input type="number" class="teste_forca" id="teste-forca" disabled />
+                        <span>Força</span>
+                    </div>
+                    <div id="teste_destreza">
+                        <input class="check" type="checkbox" value="" id="TesteDestrezaCheckbox" />
+                        <input type="number" class="teste_destreza" id="teste-destreza" disabled />
+                        <span>Destreza</span>
+                    </div>
+                    <div id="teste_constituicao">
+                        <input class="check" type="checkbox" value="" id="TesteConstituicaoCheckbox" />
+                        <input type="number" class="teste_constituicao" id="teste-constituicao" disabled />
+                        <span>Constituição</span>
+                    </div>
+                    <div id="teste_inteligencia">
+                        <input class="check" type="checkbox" value="" id="TesteInteligenciaCheckbox"  />
+                        <input type="number" class="teste_inteligencia" id="teste-inteligencia" disabled />
+                        <span>Inteligência</span>
+                    </div>
+                    <div id="teste_sabedoria">
+                        <input class="check" type="checkbox" value="" id="TesteSabedoriaCheckbox" />
+                        <input type="number" class="teste_sabedoria" id="teste-sabedoria" disabled />
+                        <span>Sabedoria</span>
+                    </div>
+                    <div id="teste_carisma">
+                        <input class="check" type="checkbox" value="" id="TesteCarismaCheckbox" />
+                        <input type="number" class="teste_carisma" id="teste-carisma" disabled/>
+                        <span>Carisma</span>
+                    </div>
+                    <span class="teste_resis">TESTES DE RESISTÊNCIA</span>
+                </div>
+            </div>
+            
+            <div class="col-lg-4" id="pericia">
+                <div id="pericias" class="borda">
+                    <div id="pericia_acrobacia">
+                        <input class="check" type="checkbox" value="" id="PericiaAcrobaciaCheckbox" />
+                        <input type="number" class="pericia_acrobacia" id="pericia-acrobacia" disabled />
+                        <span>Acrobacia <small>(Des)</small></span>
+                    </div>
+                    <div id="pericia_arcanismo">
+                        <input class="check" type="checkbox" value="" id="PericiaArcanismoCheckbox" />
+                        <input type="number" class="pericia_arcanismo" id="pericia-arcanismo" disabled />
+                        <span>Arcanismo <small>(Int)</small></span>
+                    </div>
+                    <div id="pericia_atletismo">
+                        <input class="check" type="checkbox" value="" id="PericiaAtletismoCheckbox" />
+                        <input type="number" class="pericia_atletismo" id="pericia-atletismo" disabled />
+                        <span>Atletismo <small>(For)</small></span>
+                    </div>
+                    <div id="pericia_atuacao">
+                        <input class="check" type="checkbox" value="" id="PericiaAtuacaoCheckbox" />
+                        <input type="number" class="pericia_atuacao" id="pericia-atuacao" disabled />
+                        <span>Atuação <small>(Car)</small></span>
+                    </div>
+                    <div id="pericia_blefar">
+                        <input class="check" type="checkbox" value="" id="PericiaBlefarCheckbox" />
+                        <input type="number" class="pericia_blefar" id="pericia-blefar" disabled />
+                        <span>Blefar <small>(Car)</small></span>
+                    </div>
+                    <div id="pericia_furtividade">
+                        <input class="check" type="checkbox" value="" id="PericiaFurtividadeCheckbox" />
+                        <input type="number" class="pericia_furtividade" id="pericia-furtividade" disabled />
+                        <span>Furtividade <small>(Des)</small></span>
+                    </div>
+                    <div id="pericia_historia">
+                        <input class="check" type="checkbox" value="" id="PericiaHistoriaCheckbox" />
+                        <input type="number" class="pericia_historia" id="pericia-historia" disabled />
+                        <span>História <small>(Int)</small></span>
+                    </div>
+                    <div id="pericia_intimidacao">
+                        <input class="check" type="checkbox" value="" id="PericiaIntimidacaoCheckbox" />
+                        <input type="number" class="pericia_intimidacao" id="pericia-intimidacao" disabled />
+                        <span>Intimidação <small>(Car)</small></span>
+                    </div>
+                    <div id="pericia_intuicao">
+                        <input class="check" type="checkbox" value="" id="PericiaIntuicaoCheckbox" />
+                        <input type="number" class="pericia_intuica" id="pericia-intuica" disabled />
+                        <span>Intuição <small>(Sab)</small></span>
+                    </div>
+                    <div id="pericia_investigacao">
+                        <input class="check" type="checkbox" value="" id="PericiaInvestigacaoCheckbox" />
+                        <input type="number" class="pericia_investigacao" id="pericia-investigacao" disabled />
+                        <span>Investigação <small>(Int)</small></span>
+                    </div>
+                    <div id="pericia_animais">
+                        <input class="check" type="checkbox" value="" id="PericiaAnimaisCheckbox" />
+                        <input type="number" class="pericia_animais" id="pericia-animais" disabled />
+                        <span>Lidar com Animais <small>(Sab)</small></span>
+                    </div>
+                    <div id="pericia_medicina">
+                        <input class="check" type="checkbox" value="" id="PericiaMedicinaCheckbox" />
+                        <input type="number" class="pericia_medicina" id="pericia-medicina" disabled />
+                        <span>Medicina <small>(Sab)</small></span>
+                    </div>
+                    <div id="pericia_natureza">
+                        <input class="check" type="checkbox" value="" id="PericiaNaturezaCheckbox" />
+                        <input type="number" class="pericia_natureza" id="pericia-natureza" disabled />
+                        <span>Natureza <small>(Int)</small></span>
+                    </div>
+                    <div id="pericia_percepcao">
+                        <input class="check" type="checkbox" value="" id="PericiaPercepcaoCheckbox" />
+                        <input type="number" class="pericia_percepcao" id="pericia-percepcao" disabled />
+                        <span>Percepção <small>(Sab)</small></span>
+                    </div>
+                    <div id="pericia_persuasao">
+                        <input class="check" type="checkbox" value="" id="PericiaPersuasaoCheckbox" />
+                        <input type="number" class="pericia_persuasao" id="pericia-persuasao" disabled  />
+                        <span>Persuasão <small>(Car)</small></span>
+                    </div>
+                    <div id="pericia_prestidigitacao">
+                        <input class="check" type="checkbox" value="" id="PericiaPrestidigitacaoCheckbox" />
+                        <input type="number" class="pericia_prestidigitacao" id="pericia-prestidigitacao" disabled />
+                        <span>Prestidigitação <small>(Des)</small></span>
+                    </div>
+                    <div id="pericia_religiao">
+                        <input class="check" type="checkbox" value="" id="PericiaReligiaoCheckbox" />
+                        <input type="number" class="pericia_religiao" id="pericia-religiao" disabled />
+                        <span>Religião <small>(Int)</small></span>
+                    </div>
+                    <div id="pericia_sobrevivencia">
+                        <input class="check" type="checkbox" value="" id="PericiaSobrevivenciaCheckbox" />
+                        <input type="number" class="pericia_sobrevivencia" id="pericia-sobrevivencia" disabled />
+                        <span>Sobrevivência <small>(Sab)</small></span>
+                    </div>
+                    <span class="peri">PERÍCIAS</span>
+                </div>
+            </div>
+            
+            <div id="vida_magia" class="col-lg-4">
+                <div id="grupo">
+                    <div id="superior" class="row borda">
+                        <div id="armadura" class="col-lg-4 borda">
+                            <input type="number" class="armadura" id="armaduras" />
+                            <span>classe armd</span>
+                        </div>
+                        <div id="iniciativa" class="col-lg-3 borda">
+                            <input type="number" class="iniciativa" id="mod_iniciativa" />
+                            <span>Iniciativa</span>
+                        </div>
+                        <div id="deslocamento" class="col-lg-4 borda">
+                            <input type="number" class="deslocamento" id="deslocamentos" />
+                            <span>deslocamento</span>
+                        </div>
+                    </div>
+                    <div id="vida">
+                        <div id="PV" class="borda">
+                            <div id="cima" class="row">
+                                <small class="col-lg-3 pv_texto">PV Totais</small>
+                                <input type="number" min="0" placeholder="PV Total" class="col-lg-9 pvt" id="pvt"/>
+                            </div>
+                            <input type="number" min="0" class="pva" id="pva" />
+                            <span class="pv-span">PONTOS DE VIDA ATUAIS</span>
+                        </div>
+                        <div id="PVTemp" class="borda">
+                            <input type="number" class="pvtemp" />
+                            <span>PONTOS DE VIDA TEMPORÁRIOS</span>
+                        </div>
+                    </div>
+                    <div id="baixo" class="row">
+                        <div id="dados" class="col-lg-6 borda">
+                            <div id="dados_vida" class="row">
+                                <small class="col-lg-3 dado-texto">Total</small>
+                                <input type="number" min="0" placeholder="Total" class="col-lg-9" />
+                            </div>
+                            <div id="dado">
+                                <input type="text" id="dado_vida" />
+                                <span class="dado-span">DADOS DE VIDA</span>
+                            </div>
+                        </div>
+                        <div id="sucess" class="col-lg-5 borda">
+                            <div id="morte">
+                                <div id="deubom">
+                                    <span>Sucessos</span>
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                </div>
+                                <div id="deuruim">
+                                    <span>Fracassos</span>
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                    <input type="checkbox" value="" />
+                                </div>
+                            </div>
+                            <span class="sucess_span">TESTES CONTRA A MORTE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </main>
+
+    <div id="divFicha2" class="escondidas"> @await Html.PartialAsync("Ficha2") </div>
+    <div id="divFicha3" class="escondidas"> @await Html.PartialAsync("Ficha3") </div>
+    <div id="divFicha4" class="escondidas"> @await Html.PartialAsync("Ficha4") </div>
+    <div id="divFicha5" class="escondidas"> @await Html.PartialAsync("Ficha5") </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="src/js/Ficha.js"></script>
+</body>
+</html>
